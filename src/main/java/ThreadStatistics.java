@@ -22,7 +22,7 @@ public class ThreadStatistics extends Thread {
             resetCalculations();
             calculateNumberOfEachTicketType();
             calculateNumberOfPeople();
-            showStats();
+            calculateStats();
 
             if(generateAttendees.getState().equals(Thread.State.TERMINATED)) {
                 shouldStillRun = false;
@@ -75,7 +75,7 @@ public class ThreadStatistics extends Thread {
         ;
     }
 
-    public void showStats() {
+    public void calculateStats() {
         System.out.println(
                 totalNumberOfPeople + " people have entered; " + "\n" +
                         numberOfFullTickets + " have full tickets, " + "\n" +
